@@ -1,0 +1,32 @@
+using Microsoft.EntityFrameworkCore;
+
+public class MangaService
+{
+    private ILogger<MangaService> _logger { get; set; }
+    private MangaContext _mangaContext { get; set; }
+
+    public MangaService(ILogger<MangaService> logger, MangaContext mangaContext)
+    {
+        _logger = logger;
+        _mangaContext = mangaContext;
+    }
+
+    public async Task<Manga?> GetMangaById(Guid id)
+    {
+        return await _mangaContext.Manga.FirstOrDefaultAsync();
+    }
+
+    public async Task<bool> CreateManga(Manga newManga)
+    {
+        try
+        {
+            await _mangaContext.Manga.AddAsync(newManga);
+            return true;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Failed to create Manga: {e.Message}");
+            return false;
+        }
+    }
+}
