@@ -3,8 +3,8 @@ public class Manga : IMangaCreate, IMangaUpdate
     public Guid Id { get; set; }
     public string Name { get; set; }
 
-    public Manga(string _name)
+    public Manga(string name)
     {
-        this.Name = _name;
+        this.Name = name;
     }
 }
