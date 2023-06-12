@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MangaApi.Controllers;
@@ -6,31 +7,35 @@ namespace MangaApi.Controllers;
 [Route("[controller]")]
 public class MangaController : ControllerBase
 {
-    private readonly ILogger<MangaController> _logger;
+	private readonly IMapper _mapper;
     private MangaService _mangaService { get; set; }
+    private readonly ILogger<MangaController> _logger;
 
-    public MangaController(ILogger<MangaController> logger, MangaService mangaService)
+    public MangaController(ILogger<MangaController> logger, IMapper mapper, MangaService mangaService)
     {
         _logger = logger;
+        _mapper = mapper;
         _mangaService = mangaService;
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(Guid id)
     {
-        Manga? manga = await _mangaService.GetMangaById(id);
+        Manga? foundManga = await _mangaService.GetMangaById(id);
 
-        if (manga != null)
+        if (foundManga != null)
         {
             return BadRequest($"Failed to find Manga with the id {id}.");
         }
 
-        return Ok(manga);
+        return Ok(_mapper.Map<MangaDto>(foundManga));
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(Manga newManga)
+    public async Task<IActionResult> Create(MangaCreateDto data)
     {
+        Manga newManga = _mapper.Map<Manga>(data);
+
         bool mangaCreated = await _mangaService.CreateManga(newManga);
 
         if (!mangaCreated)
