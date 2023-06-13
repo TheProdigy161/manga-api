@@ -13,7 +13,7 @@ public static class MigrationManager
         }
         catch (Exception e)
         {
-            throw;
+            throw e;
         }
 
         return app;
