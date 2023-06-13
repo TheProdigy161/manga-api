@@ -31,6 +31,14 @@ public class MangaController : ControllerBase
         return Ok(_mapper.Map<MangaDto>(foundManga));
     }
 
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        ICollection<Manga> mangas = await _mangaService.GetAllManga();
+
+        return Ok(_mapper.Map<ICollection<MangaDto>>(mangas));
+    }
+
     [HttpPost]
     public async Task<IActionResult> Create(MangaCreateDto data)
     {

@@ -16,6 +16,11 @@ public class MangaService
         return await _mangaContext.Manga.FirstOrDefaultAsync();
     }
 
+    public async Task<ICollection<Manga>> GetAllManga()
+    {
+        return await _mangaContext.Manga.ToArrayAsync();
+    }
+
     public async Task<bool> CreateManga(Manga newManga)
     {
         try
