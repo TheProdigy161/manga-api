@@ -8,10 +8,13 @@ public class MangaContext : DbContext
 
     public MangaContext(DbContextOptions<MangaContext> options) : base(options) { }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.HasPostgresExtension("uuid-ossp");
+        
         //Property Configurations
-        modelBuilder.Entity<Manga>().HasKey(x => x.Id);
-        modelBuilder.Entity<Manga>().Property(x => x.Id).HasDefaultValue(Guid.NewGuid());
+        builder.Entity<Manga>().HasKey(x => x.Id);
+        builder.Entity<Manga>().Property(x => x.Id).HasDefaultValueSql("uuid_generate_v4()");
+        builder.Entity<Manga>().Property(x => x.Name).IsRequired();
     }
 }
