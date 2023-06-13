@@ -13,7 +13,7 @@ public class MangaService
 
     public async Task<Manga?> GetMangaById(Guid id)
     {
-        return await _mangaContext.Manga.FirstOrDefaultAsync();
+        return await _mangaContext.Manga.FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<ICollection<Manga>> GetAllManga()
