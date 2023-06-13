@@ -21,6 +21,7 @@ public class MangaService
         try
         {
             await _mangaContext.Manga.AddAsync(newManga);
+            await _mangaContext.SaveChangesAsync();
             return true;
         }
         catch (Exception e)
