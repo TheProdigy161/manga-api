@@ -10,7 +10,7 @@ public static class MangaConfig
         manga.Property(x => x.Id).HasDefaultValueSql("uuid_generate_v4()");
         manga.HasIndex(x => x.Name).IsUnique();
         manga.Property(x => x.Name).IsRequired();
-        manga.Property(x => x.ReleaseDate).IsRequired();
+        manga.Property(x => x.ReleaseDate).HasDefaultValueSql("now()").IsRequired();
         manga.Property(x => x.FinishedDate);
     }
 }
