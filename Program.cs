@@ -4,15 +4,24 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-builder.Services.AddDbContext<MangaContext>(options => {
+builder.Services
+    .AddControllers(options =>
+    {
+        options.UseDateOnlyTimeOnlyStringConverters();
+    });
+
+builder.Services.AddDbContext<MangaContext>(options =>
+{
     options.UseNpgsql(builder.Configuration["Database:ConnectionString"]);
 });
 builder.Services.AddScoped<MangaService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.UseDateOnlyTimeOnlyStringConverters();
+});
 
 builder.Services.AddAutoMapper(typeof(Program));
 
