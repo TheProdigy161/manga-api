@@ -1,4 +1,3 @@
-public interface IMangaCreate
+public interface IMangaCreate : IMangaBase
 {
-    public string Name { get; set; }
 }
