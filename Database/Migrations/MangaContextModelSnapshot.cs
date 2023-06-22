@@ -29,15 +29,6 @@ namespace MangaApi.Database.Migrations
                         .HasColumnType("uuid")
                         .HasDefaultValueSql("uuid_generate_v4()");
 
-                    b.Property<DateTimeOffset>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool>("Deleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<DateTimeOffset?>("DeletedDate")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<DateOnly?>("FinishedDate")
                         .HasColumnType("date");
 
@@ -50,15 +41,12 @@ namespace MangaApi.Database.Migrations
                         .HasColumnType("date")
                         .HasDefaultValueSql("now()");
 
-                    b.Property<DateTimeOffset?>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone");
-
                     b.HasKey("Id");
 
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Manga");
+                    b.ToTable("Manga", (string)null);
                 });
 #pragma warning restore 612, 618
         }
