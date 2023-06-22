@@ -12,5 +12,7 @@ public static class MangaConfig
         manga.Property(x => x.Name).IsRequired();
         manga.Property(x => x.ReleaseDate).HasDefaultValueSql("now()").IsRequired();
         manga.Property(x => x.FinishedDate);
+
+        manga.BaseEntity();
     }
 }
