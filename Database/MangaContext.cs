@@ -26,13 +26,13 @@ public class MangaContext : DbContext
 
         foreach(EntityEntry<BaseEntity> entry in trackedEntries)
 		{
-            if (entry.State == EntityState.Modified)
-            {
-			    entry.Entity.CreatedDate = DateTimeOffset.Now;
-            }
-            else if (entry.State == EntityState.Added)
+            if (entry.State == EntityState.Added)
             {
 			    entry.Entity.UpdatedDate = DateTimeOffset.Now;
+            }
+            else if (entry.State == EntityState.Modified)
+            {
+			    entry.Entity.CreatedDate = DateTimeOffset.Now;
             }
             else if (entry.State == EntityState.Deleted)
             {
