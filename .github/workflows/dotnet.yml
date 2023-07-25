@@ -27,7 +27,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish MangaApi/MangaApi.csproj -c Release -o api
+      run: dotnet publish MangaApi.csproj -c Release -o api
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
