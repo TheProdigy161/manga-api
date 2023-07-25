@@ -35,4 +35,19 @@ public class MangaService
             return false;
         }
     }
+
+    public async Task<bool> UpdateManga(Manga manga)
+    {
+        try
+        {
+            _mangaContext.Manga.Update(manga);
+            await _mangaContext.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            _logger.LogError($"Failed to update Manga: {e.Message}");
+            return false;
+        }
+    }
 }
