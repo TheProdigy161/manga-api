@@ -26,3 +26,14 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish MangaApi/MangaApi.csproj -c Release -o api
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        # Artifact name
+        name: api
+        # A file, directory or wildcard pattern that describes what to upload
+        path: MangaApi/api/**
+        # The desired behavior if no files are found using the provided path.
+        if-no-files-found: error
