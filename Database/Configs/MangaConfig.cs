@@ -7,10 +7,10 @@ public static class MangaConfig
     {
         EntityTypeBuilder<Manga> manga = builder.Entity<Manga>();
         manga.HasKey(x => x.Id);
-        manga.Property(x => x.Id).HasDefaultValueSql("uuid_generate_v4()");
+        manga.Property(x => x.Id).HasDefaultValueSql("NEWID()");
         manga.HasIndex(x => x.Name).IsUnique();
         manga.Property(x => x.Name).IsRequired();
-        manga.Property(x => x.ReleaseDate).HasDefaultValueSql("now()").IsRequired();
+        manga.Property(x => x.ReleaseDate).HasDefaultValueSql("GETUTCDATE()").IsRequired();
         manga.Property(x => x.FinishedDate);
 
         manga.BaseEntity();

@@ -9,7 +9,7 @@ public class MangaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.HasPostgresExtension("uuid-ossp");
+        // builder.HasPostgresExtension("uuid-ossp");
         
         //Property Configurations
         builder.Manga();
