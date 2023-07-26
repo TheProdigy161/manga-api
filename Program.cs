@@ -12,7 +12,7 @@ builder.Services
 
 builder.Services.AddDbContext<MangaContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration["Database:ConnectionString"]);
+    options.UseNpgsql(builder.Configuration["Database:ConnectionString"]);
 });
 builder.Services.AddScoped<MangaService>();
 
