@@ -45,7 +45,7 @@ jobs:
       runs-on: windows-latest
 
       environment:
-        name: DEV
+        name: QA
         url: ${{ steps.deploywebapp.outputs.webapp-url }}
 
       steps:
