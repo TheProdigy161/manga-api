@@ -1,3 +1,5 @@
+#nullable disable
+
 public class Manga : BaseEntity, IManga
 {
     public Guid Id { get; set; }
@@ -5,9 +7,4 @@ public class Manga : BaseEntity, IManga
     public Uri ImageUrl { get; set; }
     public DateOnly ReleaseDate { get; set; }
     public DateOnly? FinishedDate { get; set; }
-
-    public Manga(string name)
-    {
-        this.Name = name;
-    }
 }
