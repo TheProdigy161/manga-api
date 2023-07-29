@@ -26,11 +26,11 @@ public class MangaContext : DbContext
 		{
             if (entry.State == EntityState.Added)
             {
-			    entry.Entity.UpdatedDate = DateTimeOffset.UtcNow;
+			    entry.Entity.CreatedDate = DateTimeOffset.UtcNow;
             }
             else if (entry.State == EntityState.Modified)
             {
-			    entry.Entity.CreatedDate = DateTimeOffset.UtcNow;
+			    entry.Entity.UpdatedDate = DateTimeOffset.UtcNow;
             }
             else if (entry.State == EntityState.Deleted)
             {
