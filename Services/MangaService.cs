@@ -1,13 +1,16 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 public class MangaService
 {
     private ILogger<MangaService> _logger { get; set; }
     private MangaContext _mangaContext { get; set; }
+    private IMapper _mapper { get; set; }
 
-    public MangaService(ILogger<MangaService> logger, MangaContext mangaContext)
+    public MangaService(ILogger<MangaService> logger, MangaContext mangaContext, IMapper mapper)
     {
         _logger = logger;
+        _mapper = mapper;
         _mangaContext = mangaContext;
     }
 
@@ -40,6 +43,14 @@ public class MangaService
     {
         try
         {
+            Manga? existingManga = await _mangaContext.Manga.AsNoTracking().FirstOrDefaultAsync(x => x.Id == manga.Id);
+
+            if (existingManga == null)
+            {
+                throw new Exception($"Failed to find Manga with the id {manga.Id}.");
+            }
+
+            _mapper.Map<BaseEntity, Manga>(existingManga, manga);
             _mangaContext.Manga.Update(manga);
             await _mangaContext.SaveChangesAsync();
             return true;
