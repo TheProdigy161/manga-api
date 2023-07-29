@@ -18,7 +18,11 @@ public class MangaContext : DbContext
         List<EntityEntry<BaseEntity>> trackedEntries = this.ChangeTracker.Entries<BaseEntity>()
             .Where(x =>
                 x.Entity is BaseEntity &&
-                x.State == EntityState.Added
+                (
+                    x.State == EntityState.Added ||
+                    x.State == EntityState.Modified ||
+                    x.State == EntityState.Deleted
+                )
             )
             .ToList();
 
@@ -26,15 +30,15 @@ public class MangaContext : DbContext
 		{
             if (entry.State == EntityState.Added)
             {
-			    entry.Entity.CreatedDate = DateTimeOffset.UtcNow;
+			    entry.Entity.CreatedDate = DateTime.UtcNow;
             }
             else if (entry.State == EntityState.Modified)
             {
-			    entry.Entity.UpdatedDate = DateTimeOffset.UtcNow;
+			    entry.Entity.UpdatedDate = DateTime.UtcNow;
             }
             else if (entry.State == EntityState.Deleted)
             {
-			    entry.Entity.DeletedDate = DateTimeOffset.UtcNow;
+			    entry.Entity.DeletedDate = DateTime.UtcNow;
                 entry.Entity.Deleted = true;
                 
                 entry.State = EntityState.Modified;
