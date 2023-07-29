@@ -51,15 +51,15 @@ public class MangaController : ControllerBase
             return BadRequest("Failed to create new Manga.");
         }
 
-        return Ok("Successfully created new Manga.");
+        return Ok(_mapper.Map<MangaDto>(newManga));
     }
 
     [HttpPut]
     public async Task<IActionResult> Update(MangaUpdateDto data)
     {
-        Manga newManga = _mapper.Map<Manga>(data);
+        Manga manga = _mapper.Map<Manga>(data);
 
-        bool mangaUpdated = await _mangaService.UpdateManga(newManga);
+        bool mangaUpdated = await _mangaService.UpdateManga(manga);
 
         if (!mangaUpdated)
         {
