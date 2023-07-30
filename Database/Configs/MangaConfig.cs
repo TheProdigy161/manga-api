@@ -6,6 +6,9 @@ public static class MangaConfig
     public static void Manga(this ModelBuilder builder)
     {
         EntityTypeBuilder<Manga> manga = builder.Entity<Manga>();
+
+        manga.ToTable("Manga", "Manga");
+
         manga.HasKey(x => x.Id);
         manga.Property(x => x.Id).HasDefaultValueSql("gen_random_uuid()");
         manga.HasIndex(x => x.Name).IsUnique();
