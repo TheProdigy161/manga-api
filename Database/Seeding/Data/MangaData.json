@@ -1,41 +1,48 @@
 [
     {
+        "id": "f41ab0bf-b8e7-415c-b2e6-bc89f06e15b0",
         "name": "Tokyo Ghoul",
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e5/Tokyo_Ghoul_volume_1_cover.jpg",
         "releaseDate": "2011-09-08",
         "finishedDate": "2014-09-18"
     },
     {
+        "id": "bf74f72b-d785-4a3b-b004-a1eeb79ab896",
         "name": "Hunter x Hunter",
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e5/Tokyo_Ghoul_volume_1_cover.jpg",
         "releaseDate": "1998-03-03",
         "finishedDate": "2014-09-18"
     },
     {
+        "id": "3d509f29-9d00-4a0c-bcf9-27fde06406f7",
         "name": "Naruto",
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
         "releaseDate": "1999-09-21",
         "finishedDate": "2014-10-10"
     },
     {
+        "id": "f4749200-51b0-43a7-a12d-da7b30feb52a",
         "name": "Death Note",
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6f/Death_Note_Vol_1.jpg",
         "releaseDate": "2003-12-01",
         "finishedDate": "2006-05-15"
     },
     {
+        "id": "04f33b42-b12b-4f4f-82d9-1918acdcb781",
         "name": "Tomie",
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/db/Tomie_manga_cover.jpg",
         "releaseDate": "1987-07-01",
         "finishedDate": "2000-12-01"
     },
     {
+        "id": "e43a59f4-b4c4-4c94-abdd-1756b7336de4",
         "name": "Haikyuu!!",
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6b/Haiky%C5%AB_Volume_1.jpg",
         "releaseDate": "2012-02-20",
         "finishedDate": "2020-07-20"
     },
     {
+        "id": "ee72803d-3d84-4e9a-9c63-fe38c2550611",
         "name": "My Hero Academia",
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/5a/Boku_no_Hero_Academia_Volume_1.png",
         "releaseDate": "2014-07-07",
