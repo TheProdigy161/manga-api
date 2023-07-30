@@ -11,6 +11,9 @@ public class MangaContext : DbContext
     {
         //Property Configurations
         builder.Manga();
+
+        //Seed Data
+        builder.Seed();
     }
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
