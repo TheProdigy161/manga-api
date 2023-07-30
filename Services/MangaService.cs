@@ -45,7 +45,7 @@ public class MangaService
         {
             Manga? existingManga = await _mangaContext.Manga.AsNoTracking().FirstOrDefaultAsync(x => x.Id == manga.Id);
 
-            if (existingManga == null)
+            if (existingManga is null)
             {
                 throw new Exception($"Failed to find Manga with the id {manga.Id}.");
             }
