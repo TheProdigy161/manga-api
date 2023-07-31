@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "main" ]
 env:
-  app-name: "rossmangasite"
+  app-name: "manganexusapi"
   rg-name: "manga-resource-group"
   
 jobs:
@@ -68,10 +68,10 @@ jobs:
           name: api
           path: api
 
-      - name: Login via Azure CLI
-        uses: azure/login@v1
+      - name: Login via Pulisher Profile
+        uses: azure/webapps-deploy@v2
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
 
       - name: Deploy web app
         id: deploywebapp
@@ -79,6 +79,3 @@ jobs:
         with:
           app-name: ${{ env.app-name }}
           package: api
-
-      - name: az cli logout
-        run: az logout
