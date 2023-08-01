@@ -38,11 +38,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+IConfigurationSection  originUrls = app.Configuration.GetSection("OriginUrls");
+string [] origins = originUrls.Get<string[]>() ?? new string[] { };
 app.UseCors(options => {
-    options.WithOrigins
-    (
-        app.Configuration["OriginUrls"] ?? ""
-    )
+    options.WithOrigins(origins)
     .AllowAnyHeader()
     .AllowAnyMethod();
 });
