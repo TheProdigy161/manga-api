@@ -42,6 +42,7 @@ jobs:
         files: 'api/appsettings.Development.json'
       env:
         Database.ConnectionString: ${{secrets.DATABASE_CONNECTION_STRING}}
+        OriginUrls: ${{secrets.ORIGIN_URLS}}
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
