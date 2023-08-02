@@ -23,7 +23,7 @@ public class MangaController : ControllerBase
     {
         Manga? foundManga = await _mangaService.GetMangaById(id);
 
-        if (foundManga != null)
+        if (foundManga == null)
         {
             return BadRequest($"Failed to find Manga with the id {id}.");
         }
