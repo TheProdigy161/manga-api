@@ -19,9 +19,14 @@ public class MangaService
         return await _mangaContext.Manga.FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    public async Task<ICollection<Manga>> GetAllManga()
+    public async Task<ICollection<Manga>> GetAllManga(Guid? authorId = null)
     {
-        return await _mangaContext.Manga.ToArrayAsync();
+        if (authorId is null)
+        {
+            return await _mangaContext.Manga.ToArrayAsync();
+        }
+        
+        return await _mangaContext.Manga.Where(x => x.AuthorId == authorId).ToArrayAsync();
     }
 
     public async Task<bool> CreateManga(Manga newManga)

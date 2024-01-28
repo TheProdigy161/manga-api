@@ -32,9 +32,9 @@ public class MangaController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll([FromQuery] Guid? authorId = null)
     {
-        ICollection<Manga> mangas = await _mangaService.GetAllManga();
+        ICollection<Manga> mangas = await _mangaService.GetAllManga(authorId);
 
         return Ok(_mapper.Map<ICollection<MangaDto>>(mangas));
     }
