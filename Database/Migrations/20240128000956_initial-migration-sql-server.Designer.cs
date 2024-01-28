@@ -2,17 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace MangaApi.Database.Migrations
 {
     [DbContext(typeof(MangaContext))]
-    [Migration("20230801200129_UpdatedMangaSeedData")]
-    partial class UpdatedMangaSeedData
+    [Migration("20240128000956_initial-migration-sql-server")]
+    partial class initialmigrationsqlserver
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,46 +20,46 @@ namespace MangaApi.Database.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.5")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Manga", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasDefaultValueSql("gen_random_uuid()");
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("newid()");
 
                     b.Property<DateTimeOffset>("CreatedDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp with time zone")
-                        .HasDefaultValueSql("now()");
+                        .HasColumnType("datetimeoffset")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<bool>("Deleted")
-                        .HasColumnType("boolean");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("DeletedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetimeoffset");
 
-                    b.Property<DateOnly?>("FinishedDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime?>("FinishedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateOnly>("ReleaseDate")
+                    b.Property<DateTime>("ReleaseDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("date")
-                        .HasDefaultValueSql("now()");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<DateTimeOffset?>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("Id");
 
@@ -74,60 +74,60 @@ namespace MangaApi.Database.Migrations
                             Id = new Guid("f41ab0bf-b8e7-415c-b2e6-bc89f06e15b0"),
                             CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
-                            FinishedDate = new DateOnly(2014, 9, 18),
+                            FinishedDate = new DateTime(2014, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/e5/Tokyo_Ghoul_volume_1_cover.jpg",
                             Name = "Tokyo Ghoul",
-                            ReleaseDate = new DateOnly(2011, 9, 8)
+                            ReleaseDate = new DateTime(2011, 9, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = new Guid("bf74f72b-d785-4a3b-b004-a1eeb79ab896"),
                             CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
-                            FinishedDate = new DateOnly(2014, 9, 18),
+                            FinishedDate = new DateTime(2014, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/e8/Hunter_×_Hunter_vol._1.png",
                             Name = "Hunter x Hunter",
-                            ReleaseDate = new DateOnly(1998, 3, 3)
+                            ReleaseDate = new DateTime(1998, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = new Guid("3d509f29-9d00-4a0c-bcf9-27fde06406f7"),
                             CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
-                            FinishedDate = new DateOnly(2014, 10, 10),
+                            FinishedDate = new DateTime(2014, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
                             Name = "Naruto",
-                            ReleaseDate = new DateOnly(1999, 9, 21)
+                            ReleaseDate = new DateTime(1999, 9, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = new Guid("f4749200-51b0-43a7-a12d-da7b30feb52a"),
                             CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
-                            FinishedDate = new DateOnly(2006, 5, 15),
+                            FinishedDate = new DateTime(2006, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/6/6f/Death_Note_Vol_1.jpg",
                             Name = "Death Note",
-                            ReleaseDate = new DateOnly(2003, 12, 1)
+                            ReleaseDate = new DateTime(2003, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = new Guid("04f33b42-b12b-4f4f-82d9-1918acdcb781"),
                             CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
-                            FinishedDate = new DateOnly(2000, 12, 1),
+                            FinishedDate = new DateTime(2000, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/d/db/Tomie_manga_cover.jpg",
                             Name = "Tomie",
-                            ReleaseDate = new DateOnly(1987, 7, 1)
+                            ReleaseDate = new DateTime(1987, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = new Guid("e43a59f4-b4c4-4c94-abdd-1756b7336de4"),
                             CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
                             Deleted = false,
-                            FinishedDate = new DateOnly(2020, 7, 20),
+                            FinishedDate = new DateTime(2020, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/6/6b/Haikyū_Volume_1.jpg",
                             Name = "Haikyuu!!",
-                            ReleaseDate = new DateOnly(2012, 2, 20)
+                            ReleaseDate = new DateTime(2012, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -136,7 +136,7 @@ namespace MangaApi.Database.Migrations
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/5/5a/Boku_no_Hero_Academia_Volume_1.png",
                             Name = "My Hero Academia",
-                            ReleaseDate = new DateOnly(2014, 7, 7)
+                            ReleaseDate = new DateTime(2014, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 #pragma warning restore 612, 618

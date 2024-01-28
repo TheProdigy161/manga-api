@@ -5,7 +5,7 @@ public static class DataSeeder
 {
     public static void Seed(this ModelBuilder modelBuilder)
     {
-        string mangaJson = File.ReadAllText("Database\\Seeding\\Data\\MangaData.json");
+        string mangaJson = File.ReadAllText("Database/Seeding/Data/MangaData.json");
         List<Manga>? mangas = JsonConvert.DeserializeObject<List<Manga>>(mangaJson);
 
         if (mangas is not null)

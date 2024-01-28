@@ -16,6 +16,17 @@ public class MangaContext : DbContext
         builder.Seed();
     }
 
+    protected override void ConfigureConventions(ModelConfigurationBuilder builder)
+    {
+        base.ConfigureConventions(builder);
+
+        builder.Properties<DateOnly>()
+            .HaveConversion<DateOnlyConverter>();
+            
+        builder.Properties<TimeOnly>()
+            .HaveConversion<TimeOnlyConverter>();
+    }
+
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
         List<EntityEntry<BaseEntity>> trackedEntries = this.ChangeTracker.Entries<BaseEntity>()
