@@ -10,6 +10,7 @@ public class MangaContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         //Property Configurations
+        builder.Author();
         builder.Manga();
 
         //Seed Data
@@ -29,7 +30,7 @@ public class MangaContext : DbContext
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        List<EntityEntry<BaseEntity>> trackedEntries = this.ChangeTracker.Entries<BaseEntity>()
+        List<EntityEntry<BaseEntity>> trackedEntries = ChangeTracker.Entries<BaseEntity>()
             .Where(x =>
                 x.Entity is BaseEntity &&
                 (

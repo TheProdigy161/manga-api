@@ -1,0 +1,51 @@
+[
+    {
+        "id": "41a848c8-c83c-44a2-b1ae-dc5269605ec4",
+        "name": "Sui Ishida",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e5/Tokyo_Ghoul_volume_1_cover.jpg",
+        "birthDate": "1986-12-28",
+        "deathDate": null
+    },
+    {
+        "id": "7e88b9bc-a561-4713-9bfe-afa2ae966fe6",
+        "name": "Yoshihiro Togashi",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e8/Hunter_%C3%97_Hunter_vol._1.png",
+        "birthDate": "1966-04-27",
+        "deathDate": null
+    },
+    {
+        "id": "1eb3f9aa-f094-4402-9335-ee61803a6523",
+        "name": "Masashi Kishimoto",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
+        "birthDate": "1974-11-08",
+        "deathDate": null
+    },
+    {
+        "id": "ac5db530-7940-4f08-bb9f-9ec501a681cd",
+        "name": "Death Note",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6f/Death_Note_Vol_1.jpg",
+        "birthDate": "1986-12-28",
+        "deathDate": null
+    },
+    {
+        "id": "b4bd8dcc-1443-476e-831d-d3632b508818",
+        "name": "Junji Ito",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/db/Tomie_manga_cover.jpg",
+        "birthDate": "1963-07-31",
+        "deathDate": null
+    },
+    {
+        "id": "b32394d4-3139-4085-8cb8-b417c7cb1071",
+        "name": "Haruichi Furudate",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6b/Haiky%C5%AB_Volume_1.jpg",
+        "birthDate": "1983-03-07",
+        "deathDate": null
+    },
+    {
+        "id": "9ee8c0b5-76aa-49a2-8031-44b7a3504044",
+        "name": "Kōhei Horikoshi",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/5a/Boku_no_Hero_Academia_Volume_1.png",
+        "birthDate": "1986-11-20",
+        "deathDate": null
+    }
+]

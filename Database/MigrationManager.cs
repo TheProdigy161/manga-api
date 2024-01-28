@@ -11,7 +11,7 @@ public static class MigrationManager
         {
             appContext.Database.Migrate();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             throw;
         }

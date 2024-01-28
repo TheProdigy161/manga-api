@@ -17,6 +17,12 @@ public static class MangaConfig
         manga.Property(x => x.ReleaseDate).HasDefaultValueSql("getdate()").IsRequired();
         manga.Property(x => x.FinishedDate);
 
+        manga.HasOne(x => x.Author)
+            .WithMany(x => x.Mangas)
+            .HasForeignKey(x => x.AuthorId)
+            .OnDelete(DeleteBehavior.Cascade)
+            .IsRequired();
+
         manga.BaseEntity();
     }
 }
