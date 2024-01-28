@@ -21,9 +21,9 @@ public class MangaController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(Guid id)
     {
-        Manga? foundManga = await _mangaService.GetMangaById(id);
+        Manga foundManga = await _mangaService.GetMangaById(id);
 
-        if (foundManga == null)
+        if (foundManga is null)
         {
             return BadRequest($"Failed to find Manga with the id {id}.");
         }

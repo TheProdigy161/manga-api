@@ -14,7 +14,7 @@ public class MangaService
         _mangaContext = mangaContext;
     }
 
-    public async Task<Manga?> GetMangaById(Guid id)
+    public async Task<Manga> GetMangaById(Guid id)
     {
         return await _mangaContext.Manga.FirstOrDefaultAsync(x => x.Id == id);
     }
@@ -43,7 +43,7 @@ public class MangaService
     {
         try
         {
-            Manga? existingManga = await _mangaContext.Manga.AsNoTracking().FirstOrDefaultAsync(x => x.Id == manga.Id);
+            Manga existingManga = await _mangaContext.Manga.AsNoTracking().FirstOrDefaultAsync(x => x.Id == manga.Id);
 
             if (existingManga is null)
             {
