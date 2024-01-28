@@ -1,6 +1,4 @@
-#nullable disable
-
-public class MangaDto : IManga
+public class MangaUpdateDto : IMangaUpdate
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

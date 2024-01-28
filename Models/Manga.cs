@@ -1,5 +1,3 @@
-#nullable disable
-
 public class Manga : BaseEntity, IManga
 {
     public Guid Id { get; set; }
