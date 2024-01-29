@@ -16,17 +16,24 @@ public class MangaService
 
     public async Task<Manga> GetMangaById(Guid id)
     {
-        return await _mangaContext.Manga.FirstOrDefaultAsync(x => x.Id == id);
+        return await _mangaContext.Manga
+            .Include(x => x.Author)
+            .FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<ICollection<Manga>> GetAllManga(Guid? authorId = null)
     {
         if (authorId is null)
         {
-            return await _mangaContext.Manga.ToArrayAsync();
+            return await _mangaContext.Manga
+                .Include(x => x.Author)
+                .ToArrayAsync();
         }
         
-        return await _mangaContext.Manga.Where(x => x.AuthorId == authorId).ToArrayAsync();
+        return await _mangaContext.Manga
+            .Include(x => x.Author)
+            .Where(x => x.AuthorId == authorId)
+            .ToArrayAsync();
     }
 
     public async Task<bool> CreateManga(Manga newManga)
