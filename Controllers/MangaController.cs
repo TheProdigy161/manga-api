@@ -21,7 +21,7 @@ public class MangaController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(Guid id)
     {
-        Manga foundManga = await _mangaService.GetMangaById(id);
+        Manga foundManga = await _mangaService.GetById(id, x => x.Author);
 
         if (foundManga is null)
         {
@@ -34,7 +34,11 @@ public class MangaController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery] Guid? authorId = null)
     {
-        ICollection<Manga> mangas = await _mangaService.GetAllManga(authorId);
+        ICollection<Manga> mangas = await _mangaService.GetAll
+        (
+            authorId != null ? x => x.AuthorId == authorId : null,
+            x => x.Author
+        );
 
         return Ok(_mapper.Map<ICollection<MangaDto>>(mangas));
     }
@@ -44,7 +48,7 @@ public class MangaController : ControllerBase
     {
         Manga newManga = _mapper.Map<Manga>(data);
 
-        bool mangaCreated = await _mangaService.CreateManga(newManga);
+        bool mangaCreated = await _mangaService.Create(newManga);
 
         if (!mangaCreated)
         {
@@ -59,7 +63,7 @@ public class MangaController : ControllerBase
     {
         Manga manga = _mapper.Map<Manga>(data);
 
-        bool mangaUpdated = await _mangaService.UpdateManga(manga);
+        bool mangaUpdated = await _mangaService.Update(manga);
 
         if (!mangaUpdated)
         {

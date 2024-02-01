@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 public class MangaContext : DbContext
 {
     public DbSet<Manga> Manga { get; set; } = default!;
+    public DbSet<Author> Author { get; set; } = default!;
 
     public MangaContext(DbContextOptions<MangaContext> options) : base(options) { }
 

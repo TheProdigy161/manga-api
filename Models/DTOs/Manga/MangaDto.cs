@@ -7,5 +7,5 @@ public class MangaDto : IManga
     public DateOnly? FinishedDate { get; set; }
     
     public Guid AuthorId { get; set; }
-    public Author Author { get; set; }
+    public AuthorDto Author { get; set; }
 }

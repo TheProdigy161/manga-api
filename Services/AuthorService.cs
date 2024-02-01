@@ -1,9 +1,9 @@
 using AutoMapper;
 
-public class MangaService : BaseService<Manga>
+public class AuthorService : BaseService<Author>
 {
-    public MangaService(
-        ILogger<MangaService> logger,
+    public AuthorService(
+        ILogger<AuthorService> logger,
         MangaContext mangaContext,
         IMapper mapper
 	) : base(logger, mangaContext, mapper) { }

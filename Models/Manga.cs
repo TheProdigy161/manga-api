@@ -1,6 +1,5 @@
 public class Manga : BaseEntity, IManga
 {
-    public Guid Id { get; set; }
     public string Name { get; set; }
     public Uri ImageUrl { get; set; }
     public DateOnly ReleaseDate { get; set; }

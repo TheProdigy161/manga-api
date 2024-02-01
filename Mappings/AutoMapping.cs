@@ -8,5 +8,6 @@ public class AutoMapping : Profile
         CreateMap<Manga, MangaDto>(); // Maps Manga to MangaDto.
         CreateMap<MangaCreateDto, Manga>(); // Maps MangaCreateDto to Manga.
         CreateMap<MangaUpdateDto, Manga>(); // Maps MangaCreateDto to Manga.
+        CreateMap<Author, AuthorDto>(); // Maps Author to AuthorDto.
     }
 }
