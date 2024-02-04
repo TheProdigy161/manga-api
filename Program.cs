@@ -17,7 +17,14 @@ builder.Services
 
 builder.Services.AddDbContext<MangaContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration["Database:ConnectionString"]);
+    options.UseSqlServer(
+        builder.Configuration["Database:ConnectionString"]
+        options => options.EnableRetryOnFailure(
+            maxRetryCount: 3,
+            maxRetryDelay: TimeSpan.FromSeconds(30),
+            errorNumbersToAdd: null
+        ));
+    );
 });
 builder.Services.AddScoped<MangaService>();
 
