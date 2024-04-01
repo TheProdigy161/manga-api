@@ -7,7 +7,7 @@ namespace MangaApi.Controllers;
 [Route("[controller]")]
 public class AuthorController : ControllerBase
 {
-	private readonly IMapper _mapper;
+    private readonly IMapper _mapper;
     private AuthorService _authorService { get; set; }
     private readonly ILogger<AuthorController> _logger;
 
