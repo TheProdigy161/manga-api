@@ -1,6 +1,10 @@
 using System.Linq.Expressions;
 using AutoMapper;
+using MangaApi.Database;
 using Microsoft.EntityFrameworkCore;
+using MangaApi.Models;
+
+namespace MangaApi.Services;
 
 public class BaseService<T> where T : BaseEntity
 {

@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using MangaApi.Models;
+
+namespace MangaApi.Database.Configs;
 
 public static class MangaConfig
 {

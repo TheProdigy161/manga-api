@@ -1,3 +1,7 @@
+using MangaApi.Models.Interfaces.Manga;
+
+namespace MangaApi.Models;
+
 public class Manga : BaseEntity, IManga
 {
     public string Name { get; set; }

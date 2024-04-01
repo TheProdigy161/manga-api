@@ -1,3 +1,7 @@
+using MangaApi.Models.Interfaces.Author;
+
+namespace MangaApi.Models.DTOs.Author;
+
 public class AuthorDto : IAuthorBase
 {
     public Guid Id { get; set; }

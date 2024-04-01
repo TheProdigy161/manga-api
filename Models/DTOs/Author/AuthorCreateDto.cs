@@ -1,3 +1,6 @@
+using MangaApi.Models.Interfaces.Author;
+
+namespace MangaApi.Models.DTOs.Author;
 
 public class AuthorCreateDto : IAuthorCreate
 {

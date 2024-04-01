@@ -1,5 +1,11 @@
+using System.ComponentModel;
+using MangaApi.Database.Configs;
+using MangaApi.Database.Seeding;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using MangaApi.Models;
+
+namespace MangaApi.Database;
 
 public class MangaContext : DbContext
 {

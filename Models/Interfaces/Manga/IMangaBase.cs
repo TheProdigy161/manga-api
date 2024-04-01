@@ -1,3 +1,5 @@
+namespace MangaApi.Models.Interfaces.Manga;
+
 public interface IMangaBase
 {
     public string Name { get; set; }

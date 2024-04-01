@@ -1,3 +1,7 @@
+using MangaApi.Models.Interfaces.Author;
+
+namespace MangaApi.Models;
+
 public class Author : BaseEntity, IAuthor
 {
     public string Name { get; set; }

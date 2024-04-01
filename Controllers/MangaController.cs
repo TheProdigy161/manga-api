@@ -1,5 +1,8 @@
 using AutoMapper;
+using MangaApi.Models.DTOs.Manga;
 using Microsoft.AspNetCore.Mvc;
+using MangaApi.Models;
+using MangaApi.Services;
 
 namespace MangaApi.Controllers;
 

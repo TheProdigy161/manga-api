@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
+namespace MangaApi.Models.Converters;
+
 public class TimeOnlyConverter : ValueConverter<TimeOnly, TimeSpan>
 {
     public TimeOnlyConverter() : base(

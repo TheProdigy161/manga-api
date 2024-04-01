@@ -1,4 +1,9 @@
 using AutoMapper;
+using MangaApi.Models;
+using MangaApi.Models.DTOs.Author;
+using MangaApi.Models.DTOs.Manga;
+
+namespace MangaApi.Mappings;
 
 public class AutoMapping : Profile
 {
