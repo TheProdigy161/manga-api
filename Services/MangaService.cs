@@ -1,4 +1,8 @@
 using AutoMapper;
+using MangaApi.Database;
+using MangaApi.Models;
+
+namespace MangaApi.Services;
 
 public class MangaService : BaseService<Manga>
 {

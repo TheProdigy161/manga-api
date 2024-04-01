@@ -1,3 +1,7 @@
+using MangaApi.Models.Interfaces.Manga;
+
+namespace MangaApi.Models.DTOs.Manga;
+
 public class MangaCreateDto : IMangaCreate
 {
     public string Name { get; set; }

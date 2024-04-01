@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 
+namespace MangaApi.Database;
+
 public static class MigrationManager
 {
     public static WebApplication MigrateDatabase(this WebApplication app)

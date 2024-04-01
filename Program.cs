@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
+using MangaApi.Database;
 using Microsoft.EntityFrameworkCore;
+using MangaApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +28,7 @@ builder.Services.AddDbContext<MangaContext>(options =>
         )
     );
 });
+builder.Services.AddScoped<AuthorService>();
 builder.Services.AddScoped<MangaService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

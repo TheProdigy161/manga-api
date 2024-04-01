@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
+namespace MangaApi.Models.Converters;
+
 public class DateOnlyConverter : ValueConverter<DateOnly, DateTime>
 {
     public DateOnlyConverter() : base(

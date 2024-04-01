@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using MangaApi.Models;
 using Newtonsoft.Json;
+
+namespace MangaApi.Database.Seeding;
 
 public static class DataSeeder
 {
