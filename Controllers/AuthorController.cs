@@ -32,7 +32,7 @@ public class AuthorController : ControllerBase
             return BadRequest($"Failed to find Author with the id {id}.");
         }
 
-        return Ok(_mapper.Map<MangaDto>(foundAuthor));
+        return Ok(_mapper.Map<AuthorDto>(foundAuthor));
     }
 
     [HttpGet]
@@ -55,7 +55,7 @@ public class AuthorController : ControllerBase
             return BadRequest("Failed to create new Author.");
         }
 
-        return Ok(_mapper.Map<MangaDto>(newAuthor));
+        return Ok(_mapper.Map<AuthorDto>(newAuthor));
     }
 
     [HttpPut]
