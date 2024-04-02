@@ -11,6 +11,6 @@ public static class BaseEntityConfig
         entity.Property(x => x.CreatedDate).HasDefaultValueSql("getdate()").IsRequired();
         entity.Property(x => x.UpdatedDate);
         entity.Property(x => x.DeletedDate);
-        entity.Property(x => x.Deleted);
+        entity.Property(x => x.Deleted).HasDefaultValueSql("0");
     }
 }
