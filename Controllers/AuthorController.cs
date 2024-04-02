@@ -4,6 +4,7 @@ using MangaApi.Models.DTOs.Manga;
 using Microsoft.AspNetCore.Mvc;
 using MangaApi.Models;
 using MangaApi.Services;
+using MangaApi.Services.Interfaces;
 
 namespace MangaApi.Controllers;
 
@@ -12,7 +13,7 @@ namespace MangaApi.Controllers;
 public class AuthorController : ControllerBase
 {
     private readonly IMapper _mapper;
-    private AuthorService _authorService { get; set; }
+    private IBaseService<Author> _authorService { get; set; }
     private readonly ILogger<AuthorController> _logger;
 
     public AuthorController(ILogger<AuthorController> logger, IMapper mapper, AuthorService authorService)

@@ -3,10 +3,11 @@ using AutoMapper;
 using MangaApi.Database;
 using Microsoft.EntityFrameworkCore;
 using MangaApi.Models;
+using MangaApi.Services.Interfaces;
 
 namespace MangaApi.Services;
 
-public class BaseService<T> where T : BaseEntity
+public class BaseService<T> : IBaseService<T> where T : BaseEntity
 {
     protected readonly ILogger<BaseService<T>> _logger;
     protected readonly MangaContext _context;
