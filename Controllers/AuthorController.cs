@@ -44,6 +44,14 @@ public class AuthorController : ControllerBase
         return Ok(_mapper.Map<ICollection<AuthorDto>>(authors));
     }
 
+    [HttpGet("paginated")]
+    public async Task<IActionResult> GetPaginated([FromQuery] PaginationOptions paginationOptions)
+    {
+        ICollection<Author> mangas = await _authorService.GetAll(paginationOptions);
+
+        return Ok(_mapper.Map<ICollection<AuthorDto>>(mangas));
+    }
+
     [HttpPost]
     public async Task<IActionResult> Create(AuthorCreateDto data)
     {

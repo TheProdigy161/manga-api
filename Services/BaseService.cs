@@ -32,6 +32,19 @@ public class BaseService<T> : IBaseService<T> where T : BaseEntity
         return await query.FirstOrDefaultAsync(x => x.Id == id);
     }
 
+    public async Task<ICollection<T>> GetAll(PaginationOptions paginationOptions)
+    {
+        IQueryable<T> query = _context.Set<T>().AsQueryable();
+
+        if (paginationOptions is not null)
+        {
+            query = query.Skip(paginationOptions.Offset).Take(paginationOptions.Limit);
+            return await query.ToArrayAsync();
+        }
+
+        return new T[0];
+    }
+
     public async Task<ICollection<T>> GetAll(Expression<Func<T, bool>> where = null, params Expression<Func<T, object>>[] includes)
     {
         IQueryable<T> query = _context.Set<T>().AsQueryable();
