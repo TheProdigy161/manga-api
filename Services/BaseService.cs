@@ -39,6 +39,7 @@ public class BaseService<T> : IBaseService<T> where T : BaseEntity
         if (paginationOptions is not null)
         {
             query = query.Skip(paginationOptions.Offset).Take(paginationOptions.Limit);
+            return await query.ToArrayAsync();
         }
 
         return new T[0];
