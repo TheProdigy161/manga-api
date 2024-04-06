@@ -41,7 +41,7 @@ public class BaseService<T> : IBaseService<T> where T : BaseEntity
             query = query.Skip(paginationOptions.Offset).Take(paginationOptions.Limit);
         }
 
-        return await query.ToArrayAsync();
+        return new T[0];
     }
 
     public async Task<ICollection<T>> GetAll(Expression<Func<T, bool>> where = null, params Expression<Func<T, object>>[] includes)
