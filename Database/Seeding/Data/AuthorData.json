@@ -47,5 +47,47 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/5a/Boku_no_Hero_Academia_Volume_1.png",
         "birthDate": "1986-11-20",
         "deathDate": null
+    },
+    {
+        "id": "6d1c4ee5-2cbf-4e6d-a8f1-291c6ef82f46",
+        "name": "Eiichrio Oda",
+        "imageUrl": "https://static.wikia.nocookie.net/onepiece/images/3/32/Eiichiro_Oda_Infobox.png",
+        "birthDate": "1975-01-01",
+        "deathDate": null
+    },
+    {
+        "id": "35806dbe-2534-4402-91e4-aaf40ffc78f1",
+        "name": "Akira Toriyama",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/15/Akira_Toriyama_in_1982.jpg",
+        "birthDate": "1955-04-05",
+        "deathDate": "2024-03-01"
+    },
+    {
+        "id": "5d7d2472-3c58-44fc-ad84-60984c99c4c2",
+        "name": "Tite Kubo",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3f/Bleach_%28manga%29_1.png",
+        "birthDate": "1977-06-26",
+        "deathDate": null
+    },
+    {
+        "id": "d962987d-21fa-4698-8889-1d01dbf53d74",
+        "name": "Hajime Isayama",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/FIBD2023HajimeIsayama_01.jpg",
+        "birthDate": "1986-08-29",
+        "deathDate": null
+    },
+    {
+        "id": "2d197e75-c302-4c8e-9ea7-b514f8d247e6",
+        "name": "George Morikawa",
+        "imageUrl": "https://static.wikia.nocookie.net/ippo/images/3/3a/Author_George_Morikawa.png",
+        "birthDate": "1966-01-17",
+        "deathDate": null
+    },
+    {
+        "id": "b60d9cf8-ce76-488d-9c75-60bb1023b2be",
+        "name": "Hirohiko Araki",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Hirohiko_Araki_2013_-_cropped.jpg",
+        "birthDate": "1960-06-07",
+        "deathDate": null
     }
 ]

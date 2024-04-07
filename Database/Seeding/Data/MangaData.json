@@ -54,5 +54,53 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/5a/Boku_no_Hero_Academia_Volume_1.png",
         "releaseDate": "2014-07-07",
         "finishedDate": null
+    },
+    {
+        "id": "5b37fced-19bf-4e02-900b-64073c4b8f9b",
+        "name": "One Piece",
+        "authorId": "6d1c4ee5-2cbf-4e6d-a8f1-291c6ef82f46",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg",
+        "releaseDate": "1997-07-22",
+        "finishedDate": null
+    },
+    {
+        "id": "017e1019-fbc4-4308-b466-4a6b9f65acac",
+        "name": "Dragon Ball",
+        "authorId": "35806dbe-2534-4402-91e4-aaf40ffc78f1",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c9/DB_Tank%C5%8Dbon.png",
+        "releaseDate": "1984-11-20",
+        "finishedDate": "1995-05-23"
+    },
+    {
+        "id": "a474e3fa-8ed8-4abc-885c-04020691b23d",
+        "name": "Bleach",
+        "authorId": "5d7d2472-3c58-44fc-ad84-60984c99c4c2",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3f/Bleach_%28manga%29_1.png",
+        "releaseDate": "2001-08-07",
+        "finishedDate": "2016-08-22"
+    },
+    {
+        "id": "7cf0578a-96b7-4c31-99fe-56d704dee3e4",
+        "name": "Attack on Titan",
+        "authorId": "d962987d-21fa-4698-8889-1d01dbf53d74",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/d6/Shingeki_no_Kyojin_manga_volume_1.jpg",
+        "releaseDate": "2009-09-09",
+        "finishedDate": "2021-04-09"
+    },
+    {
+        "id": "42853def-4d1d-4150-bc92-34e1c60b0f52",
+        "name": "Hajime No Ippo",
+        "authorId": "2d197e75-c302-4c8e-9ea7-b514f8d247e6",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c2/Hajime_no_Ippo_1.png",
+        "releaseDate": "1989-10-11",
+        "finishedDate": null
+    },
+    {
+        "id": "983f4cd3-57a0-4f7f-88f1-1c081514907d",
+        "name": "JoJo's Bizarre Adventure",
+        "authorId": "b60d9cf8-ce76-488d-9c75-60bb1023b2be",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f7/JoJo_no_Kimyou_na_Bouken_cover_-_vol1.jpg",
+        "releaseDate": "1987-01-01",
+        "finishedDate": null
     }
 ]
