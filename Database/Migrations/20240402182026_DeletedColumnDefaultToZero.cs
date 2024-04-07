@@ -5,7 +5,7 @@
 namespace MangaApi.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class deletedcolumndefaulttozero : Migration
+    public partial class DeletedColumnDefaultToZero : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MangaApi.Database.Migrations
 {
     [DbContext(typeof(MangaContext))]
-    [Migration("20240128191820_add-initial-author-model")]
-    partial class addinitialauthormodel
+    [Migration("20240402182026_DeletedColumnDefaultToZero")]
+    partial class DeletedColumnDefaultToZero
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace MangaApi.Database.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Author", b =>
+            modelBuilder.Entity("MangaApi.Models.Author", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,9 @@ namespace MangaApi.Database.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("Deleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
 
                     b.Property<DateTimeOffset?>("DeletedDate")
                         .HasColumnType("datetimeoffset");
@@ -130,7 +132,7 @@ namespace MangaApi.Database.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Manga", b =>
+            modelBuilder.Entity("MangaApi.Models.Manga", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -146,7 +148,9 @@ namespace MangaApi.Database.Migrations
                         .HasDefaultValueSql("getdate()");
 
                     b.Property<bool>("Deleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
 
                     b.Property<DateTimeOffset?>("DeletedDate")
                         .HasColumnType("datetimeoffset");
@@ -258,9 +262,9 @@ namespace MangaApi.Database.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Manga", b =>
+            modelBuilder.Entity("MangaApi.Models.Manga", b =>
                 {
-                    b.HasOne("Author", "Author")
+                    b.HasOne("MangaApi.Models.Author", "Author")
                         .WithMany("Mangas")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -269,7 +273,7 @@ namespace MangaApi.Database.Migrations
                     b.Navigation("Author");
                 });
 
-            modelBuilder.Entity("Author", b =>
+            modelBuilder.Entity("MangaApi.Models.Author", b =>
                 {
                     b.Navigation("Mangas");
                 });

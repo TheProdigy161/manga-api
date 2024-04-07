@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MangaApi.Database.Migrations
 {
     [DbContext(typeof(MangaContext))]
-    [Migration("20240128000956_initial-migration-sql-server")]
-    partial class initialmigrationsqlserver
+    [Migration("20240128000956_InitialMigrationSqlServer")]
+    partial class InitialMigrationSqlServer
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

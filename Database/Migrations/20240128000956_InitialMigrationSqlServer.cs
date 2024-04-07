@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MangaApi.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class initialmigrationsqlserver : Migration
+    public partial class InitialMigrationSqlServer : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

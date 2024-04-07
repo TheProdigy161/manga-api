@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MangaApi.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class addinitialauthormodel : Migration
+    public partial class AddInitialAuthorModel : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
