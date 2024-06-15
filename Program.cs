@@ -3,7 +3,11 @@ using MangaApi.Database;
 using Microsoft.EntityFrameworkCore;
 using MangaApi.Services;
 
+string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddJsonFile($"appsettings.{env}.json", optional: false, reloadOnChange: true);
 
 // Add services to the container.
 
@@ -53,8 +57,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-IConfigurationSection  originUrls = app.Configuration.GetSection("OriginUrls");
-string [] origins = originUrls.Get<string[]>() ?? new string[] { };
+string[] origins = app.Configuration
+    .GetSection("OriginUrls")
+    .GetChildren()
+    .Select(x => x.Value)
+    .ToArray();
+
 app.UseCors(options => {
     options.WithOrigins(origins)
     .AllowAnyHeader()
