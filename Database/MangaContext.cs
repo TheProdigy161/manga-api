@@ -4,10 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using MangaApi.Models;
 using MangaApi.Models.Converters;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace MangaApi.Database;
 
-public class MangaContext : DbContext
+public class MangaContext : IdentityDbContext<User>
 {
     public DbSet<Manga> Manga { get; set; } = default!;
     public DbSet<Author> Author { get; set; } = default!;
@@ -22,6 +23,8 @@ public class MangaContext : DbContext
 
         //Seed Data
         builder.Seed();
+
+        base.OnModelCreating(builder);
     }
 
     protected override void ConfigureConventions(ModelConfigurationBuilder builder)
