@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using MangaApi.Models;
 using MangaApi.Services;
 using MangaApi.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MangaApi.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class AuthorController : ControllerBase
