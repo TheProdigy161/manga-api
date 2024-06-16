@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MangaApi.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("[controller]")]
 public class HealthController : ControllerBase
