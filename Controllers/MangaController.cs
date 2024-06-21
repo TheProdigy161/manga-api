@@ -49,6 +49,7 @@ public class MangaController : ControllerBase
         return Ok(_mapper.Map<ICollection<MangaDto>>(mangas));
     }
 
+    [AllowAnonymous]
     [HttpGet("paginated")]
     public async Task<IActionResult> GetPaginated([FromQuery] PaginationOptions paginationOptions)
     {
