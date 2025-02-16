@@ -10,7 +10,6 @@ string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddEndpointsApiExplorer();
 // Add swagger.
 builder.Services.AddSwaggerGen();
