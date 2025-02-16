@@ -13,11 +13,11 @@ public static class MangaConfig
         manga.ToTable("Manga", "Manga");
 
         manga.HasKey(x => x.Id);
-        manga.Property(x => x.Id).HasDefaultValueSql("newid()");
+        manga.Property(x => x.Id).HasDefaultValueSql("gen_random_uuid()");
         manga.HasIndex(x => x.Name).IsUnique();
         manga.Property(x => x.Name).IsRequired();
         manga.Property(x => x.ImageUrl).IsRequired();
-        manga.Property(x => x.ReleaseDate).HasDefaultValueSql("getdate()").IsRequired();
+        manga.Property(x => x.ReleaseDate).HasDefaultValueSql("now()").IsRequired();
         manga.Property(x => x.FinishedDate);
 
         manga.HasOne(x => x.Author)

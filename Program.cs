@@ -3,6 +3,7 @@ using MangaApi.Database;
 using Microsoft.EntityFrameworkCore;
 using MangaApi.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
@@ -44,6 +45,8 @@ builder.Services.AddDbContext<MangaContext>(options =>
             errorCodesToAdd: null
         )
     );
+
+    options.ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
 });
 
 // Add IdentityCore.
