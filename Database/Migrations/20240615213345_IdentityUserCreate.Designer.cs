@@ -23,7 +23,7 @@ namespace MangaApi.Database.Migrations
                 .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("MangaApi.Models.Author", b =>
                 {
@@ -413,7 +413,7 @@ namespace MangaApi.Database.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    NpgsqlModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
@@ -438,7 +438,7 @@ namespace MangaApi.Database.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    NpgsqlModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");

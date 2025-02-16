@@ -37,12 +37,12 @@ builder.Services.AddAuthorizationBuilder();
 // Configure DBContext.
 builder.Services.AddDbContext<MangaContext>(options =>
 {
-    options.UseSqlServer(
+    options.UseNpgsql(
         builder.Configuration["Database:ConnectionString"],
         options => options.EnableRetryOnFailure(
             maxRetryCount: 3,
             maxRetryDelay: TimeSpan.FromSeconds(30),
-            errorNumbersToAdd: null
+            errorCodesToAdd: null
         )
     );
 });

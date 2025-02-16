@@ -23,7 +23,7 @@ namespace MangaApi.Database.Migrations
                 .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("MangaApi.Models.Author", b =>
                 {
