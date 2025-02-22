@@ -3,7 +3,6 @@ using MangaApi.Database;
 using Microsoft.EntityFrameworkCore;
 using MangaApi.Services;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 
 string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
@@ -38,15 +37,13 @@ builder.Services.AddAuthorizationBuilder();
 builder.Services.AddDbContext<MangaContext>(options =>
 {
     options.UseNpgsql(
-        builder.Configuration["Database:ConnectionString"],
+        builder.Configuration["DatabaseConnectionString"],
         options => options.EnableRetryOnFailure(
             maxRetryCount: 3,
             maxRetryDelay: TimeSpan.FromSeconds(30),
             errorCodesToAdd: null
         )
     );
-
-    options.ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
 });
 
 // Add IdentityCore.
@@ -99,7 +96,10 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MigrateDatabase();
+if (app.Environment.IsDevelopment())
+{
+    app.MigrateDatabase();
+}
 
 app.Run();
 
