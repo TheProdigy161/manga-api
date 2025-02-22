@@ -74,7 +74,11 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-string[] origins = app.Configuration["OriginUrls"].Split(',');
+string[] origins = app.Configuration
+    .GetSection("OriginUrls")
+    .GetChildren()
+    .Select(x => x.Value)
+    .ToArray();
 
 app.UseCors(options => {
     options.WithOrigins(origins)
