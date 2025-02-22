@@ -3,7 +3,8 @@ name: Dotnet Core CI
 on:
   push:
     branches:
-    - develop
+    - '*'
+
 
 jobs:
   build:
