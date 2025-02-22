@@ -37,7 +37,7 @@ builder.Services.AddAuthorizationBuilder();
 builder.Services.AddDbContext<MangaContext>(options =>
 {
     options.UseNpgsql(
-        builder.Configuration["DatabaseConnectionString"],
+        builder.Configuration["Database:ConnectionString"],
         options => options.EnableRetryOnFailure(
             maxRetryCount: 3,
             maxRetryDelay: TimeSpan.FromSeconds(30),
@@ -74,11 +74,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-string[] origins = app.Configuration
-    .GetSection("OriginUrls")
-    .GetChildren()
-    .Select(x => x.Value)
-    .ToArray();
+string[] origins = app.Configuration["OriginUrls"].Split(',');
 
 app.UseCors(options => {
     options.WithOrigins(origins)
