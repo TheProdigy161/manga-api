@@ -10,10 +10,10 @@ string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddEndpointsApiExplorer();
 // Add swagger.
 builder.Services.AddSwaggerGen();
+builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 
 // Add appsettings.json file.
 builder.Configuration.AddJsonFile($"appsettings.{env}.json", optional: false, reloadOnChange: true);
@@ -37,12 +37,12 @@ builder.Services.AddAuthorizationBuilder();
 // Configure DBContext.
 builder.Services.AddDbContext<MangaContext>(options =>
 {
-    options.UseSqlServer(
+    options.UseNpgsql(
         builder.Configuration["Database:ConnectionString"],
         options => options.EnableRetryOnFailure(
             maxRetryCount: 3,
             maxRetryDelay: TimeSpan.FromSeconds(30),
-            errorNumbersToAdd: null
+            errorCodesToAdd: null
         )
     );
 });
@@ -97,7 +97,10 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MigrateDatabase();
+
+
+//app.MigrateDatabase();
+
 
 app.Run();
 

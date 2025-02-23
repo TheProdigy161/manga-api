@@ -1,0 +1,12 @@
+{
+    "profile": "",
+    "region": "eu-west-1",
+    "configuration": "Release",
+    "function-runtime": "dotnet8",
+    "function-memory-size": 256,
+    "function-timeout": 30,
+    "function-handler": "MangaApi",
+    "function-name": "manga-api",
+    "environment-variables": "ASPNETCORE_ENVIRONMENT=Development;",
+    "function-url-enable": true
+}
