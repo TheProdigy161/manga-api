@@ -16,6 +16,8 @@ jobs:
         run: dotnet build --configuration Release
       - name: Test with dotnet
         run: dotnet test --no-build
+      - name: Install EF Core Tools
+        run: dotnet tool install -g dotnet-ef
       - name: Migrate Database
         run: dotnet ef database update
       - name: App Settings Variable Substitution
