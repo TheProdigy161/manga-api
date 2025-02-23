@@ -50,7 +50,7 @@ namespace MangaApi.Database.Migrations
                     PhoneNumber = table.Column<string>(type: "text", nullable: true),
                     PhoneNumberConfirmed = table.Column<bool>(type: "boolean", nullable: false),
                     TwoFactorEnabled = table.Column<bool>(type: "boolean", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    LockoutEnd = table.Column<DateTime>(type: "timestamp", nullable: true),
                     LockoutEnabled = table.Column<bool>(type: "boolean", nullable: false),
                     AccessFailedCount = table.Column<int>(type: "integer", nullable: false)
                 },
@@ -67,11 +67,11 @@ namespace MangaApi.Database.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
                     Name = table.Column<string>(type: "text", nullable: false),
                     ImageUrl = table.Column<string>(type: "text", nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    DeathDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    CreatedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false, defaultValueSql: "now()"),
-                    UpdatedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
-                    DeletedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    BirthDate = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    DeathDate = table.Column<DateTime>(type: "timestamp", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "now()"),
+                    UpdatedDate = table.Column<DateTime>(type: "timestamp", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "timestamp", nullable: true),
                     Deleted = table.Column<bool>(type: "boolean", nullable: false, defaultValueSql: "false")
                 },
                 constraints: table =>
@@ -193,12 +193,12 @@ namespace MangaApi.Database.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
                     Name = table.Column<string>(type: "text", nullable: false),
                     ImageUrl = table.Column<string>(type: "text", nullable: false),
-                    ReleaseDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "now()"),
-                    FinishedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    ReleaseDate = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "now()"),
+                    FinishedDate = table.Column<DateTime>(type: "timestamp", nullable: true),
                     AuthorId = table.Column<Guid>(type: "uuid", nullable: false),
-                    CreatedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false, defaultValueSql: "now()"),
-                    UpdatedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
-                    DeletedDate = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "now()"),
+                    UpdatedDate = table.Column<DateTime>(type: "timestamp", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "timestamp", nullable: true),
                     Deleted = table.Column<bool>(type: "boolean", nullable: false, defaultValueSql: "false")
                 },
                 constraints: table =>

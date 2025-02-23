@@ -33,23 +33,23 @@ namespace MangaApi.Database.Migrations
                         .HasDefaultValueSql("gen_random_uuid()");
 
                     b.Property<DateTime?>("BirthDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp");
 
-                    b.Property<DateTimeOffset>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp")
                         .HasDefaultValueSql("now()");
 
                     b.Property<DateTime?>("DeathDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp");
 
                     b.Property<bool>("Deleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
                         .HasDefaultValueSql("false");
 
-                    b.Property<DateTimeOffset?>("DeletedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("text");
@@ -58,8 +58,8 @@ namespace MangaApi.Database.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTimeOffset?>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("timestamp");
 
                     b.HasKey("Id");
 
@@ -70,7 +70,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("41a848c8-c83c-44a2-b1ae-dc5269605ec4"),
                             BirthDate = new DateTime(1986, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/e5/Tokyo_Ghoul_volume_1_cover.jpg",
                             Name = "Sui Ishida"
@@ -79,7 +79,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("7e88b9bc-a561-4713-9bfe-afa2ae966fe6"),
                             BirthDate = new DateTime(1966, 4, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/e8/Hunter_×_Hunter_vol._1.png",
                             Name = "Yoshihiro Togashi"
@@ -88,7 +88,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("1eb3f9aa-f094-4402-9335-ee61803a6523"),
                             BirthDate = new DateTime(1974, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
                             Name = "Masashi Kishimoto"
@@ -97,7 +97,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("ac5db530-7940-4f08-bb9f-9ec501a681cd"),
                             BirthDate = new DateTime(1986, 12, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/6/6f/Death_Note_Vol_1.jpg",
                             Name = "Death Note"
@@ -106,7 +106,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("b4bd8dcc-1443-476e-831d-d3632b508818"),
                             BirthDate = new DateTime(1963, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/d/db/Tomie_manga_cover.jpg",
                             Name = "Junji Ito"
@@ -115,7 +115,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("b32394d4-3139-4085-8cb8-b417c7cb1071"),
                             BirthDate = new DateTime(1983, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/6/6b/Haikyū_Volume_1.jpg",
                             Name = "Haruichi Furudate"
@@ -124,7 +124,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("9ee8c0b5-76aa-49a2-8031-44b7a3504044"),
                             BirthDate = new DateTime(1986, 11, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/5/5a/Boku_no_Hero_Academia_Volume_1.png",
                             Name = "Kōhei Horikoshi"
@@ -133,7 +133,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("6d1c4ee5-2cbf-4e6d-a8f1-291c6ef82f46"),
                             BirthDate = new DateTime(1975, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://static.wikia.nocookie.net/onepiece/images/3/32/Eiichiro_Oda_Infobox.png",
                             Name = "Eiichrio Oda"
@@ -142,7 +142,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("35806dbe-2534-4402-91e4-aaf40ffc78f1"),
                             BirthDate = new DateTime(1955, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DeathDate = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/1/15/Akira_Toriyama_in_1982.jpg",
@@ -152,7 +152,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("5d7d2472-3c58-44fc-ad84-60984c99c4c2"),
                             BirthDate = new DateTime(1977, 6, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/3/3f/Bleach_%28manga%29_1.png",
                             Name = "Tite Kubo"
@@ -161,7 +161,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("d962987d-21fa-4698-8889-1d01dbf53d74"),
                             BirthDate = new DateTime(1986, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/e/e9/FIBD2023HajimeIsayama_01.jpg",
                             Name = "Hajime Isayama"
@@ -170,7 +170,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("2d197e75-c302-4c8e-9ea7-b514f8d247e6"),
                             BirthDate = new DateTime(1966, 1, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://static.wikia.nocookie.net/ippo/images/3/3a/Author_George_Morikawa.png",
                             Name = "George Morikawa"
@@ -179,7 +179,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("b60d9cf8-ce76-488d-9c75-60bb1023b2be"),
                             BirthDate = new DateTime(1960, 6, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/c7/Hirohiko_Araki_2013_-_cropped.jpg",
                             Name = "Hirohiko Araki"
@@ -187,7 +187,7 @@ namespace MangaApi.Database.Migrations
                         new
                         {
                             Id = new Guid("b05aa230-fc8a-419f-b2e8-d0c056aee96f"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             Name = "Kaiu Shirai"
                         });
@@ -203,9 +203,9 @@ namespace MangaApi.Database.Migrations
                     b.Property<Guid>("AuthorId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTimeOffset>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp")
                         .HasDefaultValueSql("now()");
 
                     b.Property<bool>("Deleted")
@@ -213,11 +213,11 @@ namespace MangaApi.Database.Migrations
                         .HasColumnType("boolean")
                         .HasDefaultValueSql("false");
 
-                    b.Property<DateTimeOffset?>("DeletedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("timestamp");
 
                     b.Property<DateTime?>("FinishedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
@@ -229,11 +229,11 @@ namespace MangaApi.Database.Migrations
 
                     b.Property<DateTime>("ReleaseDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp")
                         .HasDefaultValueSql("now()");
 
-                    b.Property<DateTimeOffset?>("UpdatedDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("timestamp");
 
                     b.HasKey("Id");
 
@@ -249,7 +249,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("f41ab0bf-b8e7-415c-b2e6-bc89f06e15b0"),
                             AuthorId = new Guid("41a848c8-c83c-44a2-b1ae-dc5269605ec4"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2014, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/e5/Tokyo_Ghoul_volume_1_cover.jpg",
@@ -260,7 +260,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("bf74f72b-d785-4a3b-b004-a1eeb79ab896"),
                             AuthorId = new Guid("7e88b9bc-a561-4713-9bfe-afa2ae966fe6"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2014, 9, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/e8/Hunter_×_Hunter_vol._1.png",
@@ -271,7 +271,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("3d509f29-9d00-4a0c-bcf9-27fde06406f7"),
                             AuthorId = new Guid("1eb3f9aa-f094-4402-9335-ee61803a6523"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2014, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg",
@@ -282,7 +282,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("f4749200-51b0-43a7-a12d-da7b30feb52a"),
                             AuthorId = new Guid("ac5db530-7940-4f08-bb9f-9ec501a681cd"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2006, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/6/6f/Death_Note_Vol_1.jpg",
@@ -293,7 +293,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("04f33b42-b12b-4f4f-82d9-1918acdcb781"),
                             AuthorId = new Guid("b4bd8dcc-1443-476e-831d-d3632b508818"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2000, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/d/db/Tomie_manga_cover.jpg",
@@ -304,7 +304,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("e43a59f4-b4c4-4c94-abdd-1756b7336de4"),
                             AuthorId = new Guid("b32394d4-3139-4085-8cb8-b417c7cb1071"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2020, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/6/6b/Haikyū_Volume_1.jpg",
@@ -315,7 +315,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("ee72803d-3d84-4e9a-9c63-fe38c2550611"),
                             AuthorId = new Guid("9ee8c0b5-76aa-49a2-8031-44b7a3504044"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/5/5a/Boku_no_Hero_Academia_Volume_1.png",
                             Name = "My Hero Academia",
@@ -325,7 +325,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("5b37fced-19bf-4e02-900b-64073c4b8f9b"),
                             AuthorId = new Guid("6d1c4ee5-2cbf-4e6d-a8f1-291c6ef82f46"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg",
                             Name = "One Piece",
@@ -335,7 +335,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("017e1019-fbc4-4308-b466-4a6b9f65acac"),
                             AuthorId = new Guid("35806dbe-2534-4402-91e4-aaf40ffc78f1"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(1995, 5, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/c/c9/DB_Tankōbon.png",
@@ -346,7 +346,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("a474e3fa-8ed8-4abc-885c-04020691b23d"),
                             AuthorId = new Guid("5d7d2472-3c58-44fc-ad84-60984c99c4c2"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2016, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/3/3f/Bleach_%28manga%29_1.png",
@@ -357,7 +357,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("7cf0578a-96b7-4c31-99fe-56d704dee3e4"),
                             AuthorId = new Guid("d962987d-21fa-4698-8889-1d01dbf53d74"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/d/d6/Shingeki_no_Kyojin_manga_volume_1.jpg",
@@ -368,7 +368,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("42853def-4d1d-4150-bc92-34e1c60b0f52"),
                             AuthorId = new Guid("2d197e75-c302-4c8e-9ea7-b514f8d247e6"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/c/c2/Hajime_no_Ippo_1.png",
                             Name = "Hajime No Ippo",
@@ -378,7 +378,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("983f4cd3-57a0-4f7f-88f1-1c081514907d"),
                             AuthorId = new Guid("b60d9cf8-ce76-488d-9c75-60bb1023b2be"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/f/f7/JoJo_no_Kimyou_na_Bouken_cover_-_vol1.jpg",
                             Name = "JoJo's Bizarre Adventure",
@@ -388,7 +388,7 @@ namespace MangaApi.Database.Migrations
                         {
                             Id = new Guid("77a3da73-d2d9-454b-8619-cf0e27e4ab84"),
                             AuthorId = new Guid("b05aa230-fc8a-419f-b2e8-d0c056aee96f"),
-                            CreatedDate = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Deleted = false,
                             FinishedDate = new DateTime(2020, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/44/The_Promised_Neverland%2C_Volume_1.jpg",
@@ -551,8 +551,8 @@ namespace MangaApi.Database.Migrations
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean");
 
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("LockoutEnd")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)

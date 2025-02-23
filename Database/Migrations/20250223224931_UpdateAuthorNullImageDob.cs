@@ -24,10 +24,10 @@ namespace MangaApi.Database.Migrations
                 name: "BirthDate",
                 schema: "Author",
                 table: "Author",
-                type: "timestamp with time zone",
+                type: "timestamp",
                 nullable: true,
                 oldClrType: typeof(DateTime),
-                oldType: "timestamp with time zone");
+                oldType: "timestamp");
 
             migrationBuilder.InsertData(
                 schema: "Author",
@@ -72,11 +72,11 @@ namespace MangaApi.Database.Migrations
                 name: "BirthDate",
                 schema: "Author",
                 table: "Author",
-                type: "timestamp with time zone",
+                type: "timestamp",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                 oldClrType: typeof(DateTime),
-                oldType: "timestamp with time zone",
+                oldType: "timestamp",
                 oldNullable: true);
         }
     }
