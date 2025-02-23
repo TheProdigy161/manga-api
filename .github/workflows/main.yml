@@ -12,6 +12,13 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '8.0.x'
+      - name: App Settings Variable Substitution
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: './appsettings.Development.json'
+        env:
+          Database.ConnectionString: ${{ secrets.DATABASE_CONNECTION_STRING }}
+          OriginUrls: ${{ secrets.OriginUrls }}
       - name: Build with dotnet
         run: dotnet build --configuration Release
       - name: Test with dotnet
@@ -20,13 +27,6 @@ jobs:
         run: dotnet tool install -g dotnet-ef
       - name: Migrate Database
         run: dotnet ef database update
-      - name: App Settings Variable Substitution
-        uses: microsoft/variable-substitution@v1
-        with:
-          files: './appsettings.Development.json'
-        env:
-          Database.ConnectionString: ${{ secrets.DATABASE_CONNECTION_STRING }}
-          OriginUrls: ${{ secrets.OriginUrls }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
