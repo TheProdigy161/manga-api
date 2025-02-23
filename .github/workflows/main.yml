@@ -16,8 +16,6 @@ jobs:
         run: dotnet build --configuration Release
       - name: Test with dotnet
         run: dotnet test --no-build
-      - name: Publish with dotnet
-        run: dotnet publish --configuration Release
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
         with:
@@ -25,11 +23,10 @@ jobs:
         env:
           Database.ConnectionString: ${{ secrets.DATABASE_CONNECTION_STRING }}
           OriginUrls: ${{ secrets.OriginUrls }}
-      - uses: aws-actions/setup-sam@v2
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-      - run: sam build --use-container
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --config-env Development
+      - name: Deploy to AWS
+        run: dotnet lambda deploy-function
