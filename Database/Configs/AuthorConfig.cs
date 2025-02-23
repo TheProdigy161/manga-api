@@ -15,8 +15,8 @@ public static class AuthorConfig
         model.HasKey(x => x.Id);
         model.Property(x => x.Id).HasDefaultValueSql("gen_random_uuid()");
         model.Property(x => x.Name).IsRequired();
-        model.Property(x => x.ImageUrl).IsRequired();
-        model.Property(x => x.BirthDate).IsRequired();
+        model.Property(x => x.ImageUrl);
+        model.Property(x => x.BirthDate);
         model.Property(x => x.DeathDate);
 
         model.BaseEntity();

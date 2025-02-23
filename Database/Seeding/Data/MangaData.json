@@ -102,5 +102,13 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f7/JoJo_no_Kimyou_na_Bouken_cover_-_vol1.jpg",
         "releaseDate": "1987-01-01",
         "finishedDate": null
+    },
+    {
+        "id": "77a3da73-d2d9-454b-8619-cf0e27e4ab84",
+        "name": "The Promised Neverland",
+        "authorId": "b05aa230-fc8a-419f-b2e8-d0c056aee96f",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/44/The_Promised_Neverland%2C_Volume_1.jpg",
+        "releaseDate": "2016-08-01",
+        "finishedDate": "2020-06-15"
     }
 ]

@@ -97,10 +97,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-
-
 //app.MigrateDatabase();
-
 
 app.Run();
 

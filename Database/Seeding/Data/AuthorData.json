@@ -89,5 +89,12 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Hirohiko_Araki_2013_-_cropped.jpg",
         "birthDate": "1960-06-07",
         "deathDate": null
+    },
+    {
+        "id": "b05aa230-fc8a-419f-b2e8-d0c056aee96f",
+        "name": "Kaiu Shirai",
+        "imageUrl": null,
+        "birthDate": null,
+        "deathDate": null
     }
 ]
