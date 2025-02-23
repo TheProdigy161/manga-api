@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 // Add swagger.
 builder.Services.AddSwaggerGen();
+builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 
 // Add appsettings.json file.
 builder.Configuration.AddJsonFile($"appsettings.{env}.json", optional: false, reloadOnChange: true);
@@ -96,10 +97,10 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-if (app.Environment.IsDevelopment())
-{
-    app.MigrateDatabase();
-}
+
+
+//app.MigrateDatabase();
+
 
 app.Run();
 
