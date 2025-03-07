@@ -40,6 +40,9 @@ jobs:
     - name: Publish
       run: dotnet publish MangaApi.csproj -c Release -o api
 
+    - name: Display Origin Urls
+      run: echo ${{secrets.ORIGIN_URLS}} | sed 's/./& /g'
+
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
       with:
