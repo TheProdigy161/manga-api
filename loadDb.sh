@@ -19,4 +19,3 @@ PASSWORD='Password123!'
 }
 
 echo "Container started!";
-
