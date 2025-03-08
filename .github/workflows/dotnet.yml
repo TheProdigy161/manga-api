@@ -3,7 +3,11 @@
 
 name: .NET
 
+
+# Add trigger for manual run
+
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -36,16 +40,19 @@ jobs:
     - name: Publish
       run: dotnet publish MangaApi.csproj -c Release -o api
 
+    - name: Display Origin Urls
+      run: echo ${{secrets.ORIGIN_URLS}} | sed 's/./& /g'
+
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
       with:
-        files: 'api/appsettings.Development.json'
+        files: 'api/appsettings.Production.json'
       env:
         Database.ConnectionString: ${{secrets.DATABASE_CONNECTION_STRING}}
         OriginUrls: ${{secrets.ORIGIN_URLS}}
 
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         # Artifact name
         name: api
@@ -64,7 +71,7 @@ jobs:
 
       steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: api
           path: api
