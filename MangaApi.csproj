@@ -20,7 +20,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
   </ItemGroup>
 
-  <Target Name="RunLoadDbScript" BeforeTargets="Build" Condition="'$(ASPNETCORE_ENVIRONMENT)' == 'Development'">
+  <Target Name="RunLoadDbScript" AfterTargets="Build" Condition="'$(CONFIGURATION)' == 'Debug' Or '$(ASPNETCORE_ENVIRONMENT)' == 'Development'">
     <Exec Command="bash ./loadDb.sh" />
   </Target>
 </Project>
