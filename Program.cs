@@ -3,6 +3,8 @@ using MangaApi.Database;
 using Microsoft.EntityFrameworkCore;
 using MangaApi.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using MangaApi.Models;
 
 string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
@@ -52,6 +54,10 @@ builder.Services
     .AddIdentityCore<User>()
     .AddEntityFrameworkStores<MangaContext>()
     .AddApiEndpoints();
+
+// Add EmailService
+builder.Services.AddSingleton(builder.Configuration.GetSection("EmailOptions").Get<EmailOptions>());
+builder.Services.AddTransient<IEmailSender, EmailService>();
 
 // Add DI Services.
 builder.Services.AddScoped<AuthorService>();

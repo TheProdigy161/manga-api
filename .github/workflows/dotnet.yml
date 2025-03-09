@@ -49,6 +49,8 @@ jobs:
         files: 'api/appsettings.Production.json'
       env:
         Database.ConnectionString: ${{secrets.DATABASE_CONNECTION_STRING}}
+        EmailOptions.SenderAddress: ${{secrets.EMAIL_SENDER_ADDRESS}}
+        EmailOptions.ConnectionString: ${{secrets.EMAIL_CONNECTION_STRING}}
         OriginUrls: ${{secrets.ORIGIN_URLS}}
 
     - name: Upload a Build Artifact

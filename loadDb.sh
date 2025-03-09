@@ -17,6 +17,10 @@ PASSWORD='Password123!'
         -p 1433:1433 \
         --name $CONTAINER_NAME \
         mcr.microsoft.com/mssql/server;
+
+    # Wait for 5 seconds to allow for container to create
+    echo "Waiting for container to create";
+    sleep 5
 }
 
 # Wait for 5 seconds to allow for container to start
