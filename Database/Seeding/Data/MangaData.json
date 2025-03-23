@@ -102,5 +102,53 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f7/JoJo_no_Kimyou_na_Bouken_cover_-_vol1.jpg",
         "releaseDate": "1987-01-01",
         "finishedDate": null
+    },
+    {
+        "id": "d67f98f1-880c-4dd9-aeff-e51cd04ec53b",
+        "name": "Ashita no Joe",
+        "authorId": "5bfa9c6f-a9ab-4536-a06a-eb4818f92159",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/38/Ashita_no_Joe_Volume_1.jpg",
+        "releaseDate": "1968-01-01",
+        "finishedDate": "1973-05-13"
+    },
+    {
+        "id": "d227faf2-8b95-44e0-9a93-673ca2f69e89",
+        "name": "Kaiju No. 8",
+        "authorId": "f0ce140c-052e-422b-b3d3-95e1094fbe11",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/cd/Kaiju_No_8.jpg",
+        "releaseDate": "2020-07-03",
+        "finishedDate": null
+    },
+    {
+        "id": "06c74ada-f4f5-428f-89f0-aff30a314a37",
+        "name": "Soul Eater",
+        "authorId": "8ea5877c-917c-4ef7-86f8-4643f65b73a5",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fe/Soul_Eater_manga_volume_1.jpg",
+        "releaseDate": "2004-05-12",
+        "finishedDate": "2013-08-12"
+    },
+    {
+        "id": "a22a52e8-a2a7-494d-9d50-d226cd5c11a1",
+        "name": "Black Clover",
+        "authorId": "d68aeb26-38ff-4462-9ef7-9fc107201285",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/69/Black_Clover%2C_volume_1.jpg",
+        "releaseDate": "2015-02-16",
+        "finishedDate": null
+    },
+    {
+        "id": "3e8fbdb4-325f-4078-8d79-26d79231f14e",
+        "name": "Chainsaw Man",
+        "authorId": "1be98453-4bed-4333-ba4d-8580ed38c8e7",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/24/Chainsawman.jpg",
+        "releaseDate": "2018-12-03",
+        "finishedDate": null
+    },
+    {
+        "id": "92f3fd82-8c0a-4443-8db0-88f1c24d57a7",
+        "name": "Fire Punch",
+        "authorId": "1be98453-4bed-4333-ba4d-8580ed38c8e7",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3b/Firepunch12.jpg",
+        "releaseDate": "2016-04-18",
+        "finishedDate": "2018-01-01"
     }
 ]

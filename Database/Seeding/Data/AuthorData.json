@@ -89,5 +89,40 @@
         "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Hirohiko_Araki_2013_-_cropped.jpg",
         "birthDate": "1960-06-07",
         "deathDate": null
+    },
+    {
+        "id": "5bfa9c6f-a9ab-4536-a06a-eb4818f92159",
+        "name": "Ikki Kajiwara",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/90/Ikki_Kajiwara.jpg",
+        "birthDate": "1936-09-04",
+        "deathDate": "1987-01-21"
+    },
+    {
+        "id": "f0ce140c-052e-422b-b3d3-95e1094fbe11",
+        "name": "Naoya Matsumoto",
+        "imageUrl": "https://wikizilla.org/w/images/8/85/Naoya_Matsumoto_actor.png",
+        "birthDate": "1982-05-02",
+        "deathDate": null
+    },
+    {
+        "id": "8ea5877c-917c-4ef7-86f8-4643f65b73a5",
+        "name": "Atsushi Ohkubo",
+        "imageUrl": "https://static.wikia.nocookie.net/souleater/images/1/1c/Atsushi_%C5%8Ckubo_-_%281b%29.png/revision/latest?cb=20140624214140",
+        "birthDate": "1979-09-20",
+        "deathDate": null
+    },
+    {
+        "id": "d68aeb26-38ff-4462-9ef7-9fc107201285",
+        "name": "Yūki Tabata",
+        "imageUrl": "https://static.wikia.nocookie.net/blackclover/images/f/fb/Tabata_Yuki.png/revision/latest?cb=20181229234259",
+        "birthDate": "1984-07-30",
+        "deathDate": null
+    },
+    {
+        "id": "1be98453-4bed-4333-ba4d-8580ed38c8e7",
+        "name": "Tatsuki Fujimoto",
+        "imageUrl": "https://www.libertybooks.com/image/cache/catalog/Tatsuki%20Fujimoto%201-300x300.png?q6",
+        "birthDate": "1993-10-10",
+        "deathDate": null
     }
 ]
