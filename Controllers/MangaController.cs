@@ -24,6 +24,7 @@ public class MangaController : ControllerBase
         _mangaService = mangaService;
     }
 
+    [AllowAnonymous]
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(Guid id)
     {
