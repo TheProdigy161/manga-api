@@ -1,3 +1,4 @@
+using MangaApi.Database.Seeding;
 using Microsoft.EntityFrameworkCore;
 
 namespace MangaApi.Database;
@@ -12,6 +13,7 @@ public static class MigrationManager
         try
         {
             appContext.Database.Migrate();
+            appContext.Seed();
         }
         catch (Exception ex)
         {

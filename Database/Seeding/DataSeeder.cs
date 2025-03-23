@@ -6,13 +6,15 @@ namespace MangaApi.Database.Seeding;
 
 public static class DataSeeder
 {
-    public static void Seed(this ModelBuilder modelBuilder)
+    public static void Seed(this MangaContext context)
     {
-        modelBuilder.TrySeedAuthor();
-        modelBuilder.TrySeedManga();
+        context.TrySeedAuthor();
+        context.TrySeedManga();
+
+        context.SaveChanges();
     }
 
-    private static void TrySeedAuthor(this ModelBuilder modelBuilder)
+    private static void TrySeedAuthor(this MangaContext context)
     {
         string authorJson = File.ReadAllText("Database/Seeding/Data/AuthorData.json");
         List<Author> authors = JsonConvert.DeserializeObject<List<Author>>(authorJson);
@@ -21,19 +23,21 @@ public static class DataSeeder
         {
             foreach (Author author in authors)
             {
-                modelBuilder.Entity<Author>().HasData(new Author
+                if (!context.Author.Any(a => a.Id == author.Id))
                 {
-                    Id = author.Id,
-                    Name = author.Name,
-                    ImageUrl = author.ImageUrl,
-                    BirthDate = author.BirthDate,
-                    DeathDate = author.DeathDate
-                });
+                    // Add new authors
+                    context.Author.Add(author);
+                }
+                else
+                {
+                    // Update existing authors
+                    context.Author.Update(author);
+                }
             }
         }
     }
 
-    private static void TrySeedManga(this ModelBuilder modelBuilder)
+    private static void TrySeedManga(this MangaContext context)
     {
         string mangaJson = File.ReadAllText("Database/Seeding/Data/MangaData.json");
         List<Manga> mangas = JsonConvert.DeserializeObject<List<Manga>>(mangaJson);
@@ -42,15 +46,16 @@ public static class DataSeeder
         {
             foreach (Manga manga in mangas)
             {
-                modelBuilder.Entity<Manga>().HasData(new Manga
+                if (!context.Manga.Any(a => a.Id == manga.Id))
                 {
-                    Id = manga.Id,
-                    Name = manga.Name,
-                    AuthorId = manga.AuthorId,
-                    ImageUrl = manga.ImageUrl,
-                    ReleaseDate = manga.ReleaseDate,
-                    FinishedDate = manga.FinishedDate
-                });
+                    // Add new mangas
+                    context.Manga.Add(manga);
+                }
+                else
+                {
+                    // Update existing mangas
+                    context.Manga.Update(manga);
+                }
             }
         }
     }

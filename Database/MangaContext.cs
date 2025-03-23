@@ -21,9 +21,6 @@ public class MangaContext : IdentityDbContext<User>
         builder.Author();
         builder.Manga();
 
-        //Seed Data
-        builder.Seed();
-
         base.OnModelCreating(builder);
     }
 
