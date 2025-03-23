@@ -9,7 +9,7 @@ namespace MangaApi.Services.Interfaces;
 public interface IBaseService<T> where T : BaseEntity
 {
     Task<T> GetById(Guid id, params Expression<Func<T, object>>[] includes);
-    Task<ICollection<T>> GetAll(PaginationOptions paginationOptions);
+    Task<ICollection<T>> GetAll(PaginationOptions paginationOptions, Expression<Func<T, object>> orderBy = null);
     Task<ICollection<T>> GetAll(Expression<Func<T, bool>> where = null, params Expression<Func<T, object>>[] includes);
     Task<bool> Create(T newModel);
     Task<bool> Update(T model);

@@ -1,5 +1,3 @@
-using MangaApi.Models.Interfaces.Manga;
-
 namespace MangaApi.Models;
 
 public class PaginationOptions : IPaginationOptions

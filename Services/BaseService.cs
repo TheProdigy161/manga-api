@@ -32,9 +32,14 @@ public class BaseService<T> : IBaseService<T> where T : BaseEntity
         return await query.FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    public async Task<ICollection<T>> GetAll(PaginationOptions paginationOptions)
+    public async Task<ICollection<T>> GetAll(PaginationOptions paginationOptions, Expression<Func<T, object>> orderBy = null)
     {
         IQueryable<T> query = _context.Set<T>().AsQueryable();
+
+        if (orderBy is not null)
+        {
+            query = query.OrderBy(orderBy);
+        }
 
         if (paginationOptions is not null)
         {

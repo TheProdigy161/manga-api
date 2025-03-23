@@ -24,7 +24,6 @@ public class MangaController : ControllerBase
         _mangaService = mangaService;
     }
 
-    [AllowAnonymous]
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(Guid id)
     {
@@ -54,7 +53,7 @@ public class MangaController : ControllerBase
     [HttpGet("paginated")]
     public async Task<IActionResult> GetPaginated([FromQuery] PaginationOptions paginationOptions)
     {
-        ICollection<Manga> mangas = await _mangaService.GetAll(paginationOptions);
+        ICollection<Manga> mangas = await _mangaService.GetAll(paginationOptions, x => x.Name);
 
         return Ok(_mapper.Map<ICollection<MangaDto>>(mangas));
     }
